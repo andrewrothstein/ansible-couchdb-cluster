@@ -12,7 +12,7 @@
     group={{couchdb_group}}
     home={{couchdb_dir}}
     state=present
-    
+
 - name: create directories
   become: yes
   become_user: root
@@ -57,3 +57,5 @@
     group={{couchdb_group}}
     mode=0644
   
+- name: configure system init...
+  include: '{{couchdb_init}}.yml'

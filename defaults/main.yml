@@ -1,6 +1,6 @@
 ---
 #couchdb_conf_port : 5984
-#couchdb_conf_bind_address : '127.0.0.1'
+couchdb_network_iface: eth0
 
 couchdb_user: couchdb
 couchdb_group: couchdb
@@ -22,3 +22,5 @@ couchdb_pki_cert_suffix: '.pem'
 #  bob: 'bob-password'
 #  alice: 'alice-password'
 
+couchdb_init: systemd
+couchdb_launch: True

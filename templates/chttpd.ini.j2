@@ -4,8 +4,8 @@ port = {{couchdb_conf_port}}
 {% else %}
 ;port = 5984
 {% endif %}
-{% if couchdb_conf_bind_address is defined %}
-bind_address = {{couchdb_conf_bind_address}}
+{% if couchdb_network_iface is defined %}
+bind_address = {{ hostvars[inventory_hostname]["ansible_" + couchdb_network_iface]["ipv4"]["address"] }}
 {% else %}
 ;bind_address = 127.0.0.1
 {% endif %}
