@@ -32,3 +32,4 @@ couchdb_pki_cert_suffix: '.pem'
 
 couchdb_init: systemd
 couchdb_activate: True
+couchdb_async_io_threads: 16

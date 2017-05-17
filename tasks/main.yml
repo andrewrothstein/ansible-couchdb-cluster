@@ -51,7 +51,7 @@
 - name: configurate....
   become: yes
   become_user: root
-<<<<<<< HEAD
+  with_items:
     - f: httpd_proxies.ini
     - f: chttpd.ini
     - f: admins.ini
@@ -59,6 +59,7 @@
     - f: daemons.ini
     - f: couchdb.ini
     - f: httpd.ini
+    - f: vm.args, d: '{{couchdb_dir}}/etc'
   template:
     src: '{{item.f}}.j2'
     dest: '{{item.d|default(couchdb_etc_local_dir)}}/{{item.f}}'
