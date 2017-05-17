@@ -13,6 +13,7 @@ couchdb_bind:
 #  interface: eth0
   
 couchdb_dir: /usr/local/couchdb
+couchdb_data_dir: '{{ couchdb_dir }}/data'
 
 couchdb_secure: True
 couchdb_pki_dir: '~/pki-dir'

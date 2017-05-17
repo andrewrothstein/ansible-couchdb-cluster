@@ -21,6 +21,7 @@
   with_items:
     - d: '{{couchdb_etc_pki_dir}}'
     - d: '{{couchdb_dir}}/etc/local.d'
+    - d: '{{couchdb_data_dir}}'
   file:
     path: '{{item.d}}'
     state: directory
@@ -50,12 +51,14 @@
 - name: configurate....
   become: yes
   become_user: root
-  with_items:
+<<<<<<< HEAD
     - f: httpd_proxies.ini
     - f: chttpd.ini
     - f: admins.ini
     - f: ssl.ini
     - f: daemons.ini
+    - f: couchdb.ini
+    - f: httpd.ini
   template:
     src: '{{item.f}}.j2'
     dest: '{{item.d|default(couchdb_etc_local_dir)}}/{{item.f}}'
