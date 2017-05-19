@@ -13,12 +13,18 @@ galaxy_info:
     - name: Fedora
       versions:
         - 23
+        - 24
+        - 25
+    - name: Debian
+      versions:
+        - jessie
     - name: Ubuntu
       versions:
         - trusty
         - xenial
   galaxy_tags:
-    - development
+    - database
+    - documentstore
 
 dependencies:
   - role: andrewrothstein.couchdb
