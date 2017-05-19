@@ -3,3 +3,4 @@
   roles:
     - role: '{{playbook_dir}}'
       couchdb_activate: False
+      couchdb_pki_dir: '{{playbook_dir}}/test-pki'
