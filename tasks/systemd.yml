@@ -14,13 +14,13 @@
 - name: systemctl daemon-reload
   become: yes
   become_user: root
-  when: couchdb_cluster_activate and couchdb_cluster_service_def|changed
+  when: couchdb_activate and couchdb_cluster_service_def|changed
   command: systemctl daemon-reload
     
 - name: launch couchdb service
   become: yes
   become_user: root
-  when: couchdb_cluster_activate
+  when: couchdb_activate
   service:
     name: couchdb
     enabled: true

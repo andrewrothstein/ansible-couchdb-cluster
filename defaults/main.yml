@@ -30,4 +30,4 @@ couchdb_pki_cert_suffix: '.pem'
 #  alice: alice-password
 
 couchdb_init: systemd
-couchdb_launch: True
+couchdb_activate: True
