@@ -28,5 +28,5 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.couchdb
-    version: v2.0.0
+    version: v2.0.2
   
