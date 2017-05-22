@@ -14,10 +14,10 @@
 # (specified using -sname) or it can by fully qualified (-name).  There can be
 # no communication between nodes running with the -sname flag and those running 
 # with the -name flag.
-{% if couchdb_network_iface is defined %}
+{% if couchdb_bind.ty == "static" %}
+-name couchdb@{{ couchdb_bind.host }}
+{% elif couchdb_bind.ty == "interface" %}
 -name couchdb@{{ couchdb_network_iface|ipaddr }}
-{% elif couchdb_network_address is defined %}
--name couchdb@{{ couchdb_network_address }}
 {% else %}
 -name couchdb@localhost
 {% endif %}

@@ -3,6 +3,7 @@ couchdb_user: couchdb
 couchdb_group: couchdb
 
 #couchdb_port : 5984
+#couchdb_node_port : 5986
 couchdb_bind:
   ty: static
   host: '127.0.0.1'
