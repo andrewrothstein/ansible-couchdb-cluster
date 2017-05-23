@@ -24,6 +24,7 @@ name=couchdb2
 user=couchdb
 program={{ couchdb_dir }}/bin/couchdb
 args=''
+piddir={{ couchdb_dir }}/var/run/
 pidfile={{ couchdb_dir }}/var/run/$name.pid
 logdir={{ couchdb_dir }}/var/log
 
@@ -44,6 +45,9 @@ start() {
     [ ! -d "$logdir" ] && mkdir "$logdir"
     chown -R "$user":"$group" "$logdir"
     chmod 755 "$logdir"
+    [ ! -d "$piddir" ] && mkdir "$piddir"
+    chown -R "$user":"$group" "$piddir"
+    chmod 755 "$piddir"
 
     # Setup any environmental stuff beforehand
 

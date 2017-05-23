@@ -1,17 +1,4 @@
 ---
-- name: create directories
-  become: yes
-  become_user: root
-  with_items:
-    - d: '{{couchdb_dir}}/var/run'
-      m: '0700'
-  file:
-    path: {{item.d}}
-    state: directory
-    owner: {{couchdb_user}}
-    group: {{couchdb_group}}
-    mode: {{item.m}}
-
 - name: install init.d service
   become: yes
   become_user: root
