@@ -8,8 +8,8 @@
       d: '/etc/init.d'
   template:
     src: '{{item.f}}.j2'
-    dest: '{{item.d}}'
-    mode: '0755"
+    dest: '{{item.d}}/{{item.f}}'
+    mode: '0755'
 
 - name: Update rc.d
   shell: update-rc.d couchdb2 defaults
