@@ -21,7 +21,6 @@
   with_items:
     - d: '{{couchdb_etc_pki_dir}}'
     - d: '{{couchdb_dir}}/etc/local.d'
-    - d: '{{couchdb_data_dir}}'
   file:
     path: '{{item.d}}'
     state: directory
