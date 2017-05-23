@@ -42,10 +42,10 @@ emit() {
 
 start() {
     # Ensure the log directory is setup correctly.
-    [ ! -d "$logdir" ] && mkdir "$logdir"
+    [ ! -d "$logdir" ] && mkdir -p "$logdir"
     chown -R "$user":"$group" "$logdir"
     chmod 755 "$logdir"
-    [ ! -d "$piddir" ] && mkdir "$piddir"
+    [ ! -d "$piddir" ] && mkdir -p "$piddir"
     chown -R "$user":"$group" "$piddir"
     chmod 755 "$piddir"
 
