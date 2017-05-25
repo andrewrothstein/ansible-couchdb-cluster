@@ -59,6 +59,7 @@
     - f: couchdb.ini
     - f: httpd.ini
     - f: cluster.ini
+    - f: compactions.ini
     - f: 'vm.args'
       d: '{{couchdb_dir}}/etc'
   template:

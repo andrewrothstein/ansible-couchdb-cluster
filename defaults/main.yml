@@ -40,3 +40,6 @@ couchdb_async_io_threads: 16
 #   r=2
 #   w=2
 #   n=3
+
+# couchdb_compaction_settings:
+#   _default: '[{db_fragmentation, "70%"}, {view_fragmentation, "60%"}, {from, "23:00"}, {to, "04:00"}]'
