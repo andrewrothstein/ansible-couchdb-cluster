@@ -58,6 +58,7 @@
     - f: daemons.ini
     - f: couchdb.ini
     - f: httpd.ini
+    - f: cluster.ini
     - f: 'vm.args'
       d: '{{couchdb_dir}}/etc'
   template:
