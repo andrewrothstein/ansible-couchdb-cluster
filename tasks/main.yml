@@ -56,6 +56,13 @@
     - f: admins.ini
     - f: ssl.ini
     - f: daemons.ini
+    - f: couchdb.ini
+    - f: httpd.ini
+    - f: cluster.ini
+    - f: compactions.ini
+    - f: log.ini
+    - f: 'vm.args'
+      d: '{{couchdb_dir}}/etc'
   template:
     src: '{{item.f}}.j2'
     dest: '{{item.d|default(couchdb_etc_local_dir)}}/{{item.f}}'
