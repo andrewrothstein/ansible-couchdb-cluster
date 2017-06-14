@@ -49,9 +49,12 @@ start() {
     [ ! -d "$piddir" ] && mkdir -p "$piddir"
     chown -R "$user":"$group" "$piddir"
     chmod 755 "$piddir"
-    [ ! -d "$datadir" ] && mkdir -p "$datadir"
-    chown -R "$user":"$group" "$datadir"
-    chmod 755 "$datadir"
+
+    # if a data directory does not exist. error quickly
+    if [ ! -d "$datadir" ] ; then
+        emit "$name could not start because data directory does not exist"
+        return 1
+    fi
 
     # Setup any environmental stuff beforehand
 
