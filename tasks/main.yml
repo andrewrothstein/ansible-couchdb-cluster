@@ -71,4 +71,4 @@
     mode: '{{item.m|default("0644")}}'
   
 - name: configure system init...
-  include: '{{couchdb_init}}.yml'
+  include_tasks: '{{couchdb_init}}.yml'
