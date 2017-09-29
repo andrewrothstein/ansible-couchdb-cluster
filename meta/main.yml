@@ -15,9 +15,11 @@ galaxy_info:
         - 23
         - 24
         - 25
+        - 26
     - name: Debian
       versions:
         - jessie
+        - stretch
     - name: Ubuntu
       versions:
         - xenial
@@ -27,5 +29,4 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.couchdb
-    version: v2.0.2
-  
+    version: v2.1.0
