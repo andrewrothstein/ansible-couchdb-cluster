@@ -62,7 +62,7 @@
     - f: cluster.ini
     - f: compactions.ini
     - f: log.ini
-    - f: 'vm.args'
+    - f: vm.args
       d: '{{couchdb_dir}}/etc'
   template:
     src: '{{item.f}}.j2'
