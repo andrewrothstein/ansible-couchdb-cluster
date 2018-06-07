@@ -23,3 +23,8 @@ socket_options = {{ couchdb_socket_options }}
 ; For more socket options, consult Erlang's module 'inet' man page.
 ;socket_options = [{recbuf, 262144}, {sndbuf, 262144}, {nodelay, true}]
 {% endif %}
+require_valid_user = {{ couchdb_require_valid_user }}
+
+
+[couch_httpd_auth]
+require_valid_user = {{ couchdb_require_valid_user_node_local }}
