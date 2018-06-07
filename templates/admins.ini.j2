@@ -7,7 +7,7 @@
 {% if couchdb_admins is defined %}
 [admins]
 {% for (userid, pwd) in couchdb_admins.iteritems() %}
-{{userid}} = '{{pwd|e}}'
+{{userid}} = '{{pwd|couchdb_password_hash(userid|hash('sha1'))}}'
 {% endfor %}
 {% else %}
 ;admin = mysecretpassword
