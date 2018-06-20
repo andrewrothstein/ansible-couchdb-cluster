@@ -3,6 +3,7 @@ __metaclass__ = type
 
 import binascii
 import hashlib
+import six
 
 try:
     from passlib.hash import pbkdf2_sha1
@@ -13,6 +14,7 @@ except ImportError:
 
 
 def couchdb_password_hash(password, salt, iterations=10):
+    salt = salt.encode('utf-8') if isinstance(salt, six.text_type) else salt
     if not HAS_PASSLIB:
         return '-hashed-{hash},{salt}'.format(
             hash=hashlib.sha1(password + salt),
