@@ -38,6 +38,8 @@ couchdb_require_valid_user_node_local: false
 couchdb_init: systemd
 couchdb_activate: True
 couchdb_async_io_threads: 16
+couchdb_instance_uuid: "{{ inventory_hostname|to_uuid|replace('-', '') }}"
+couchdb_httpd_auth_secret: "{{ ansible_product_uuid|hash('sha256') }}"
 
 # couchdb_cluster_settings:
 #   q: 8
