@@ -35,6 +35,8 @@ couchdb_pki_cert_suffix: '.pem'
 couchdb_require_valid_user: false
 couchdb_require_valid_user_node_local: false
 
+couchdb_reduce_limit: true
+
 couchdb_init: systemd
 couchdb_activate: True
 couchdb_async_io_threads: 16
