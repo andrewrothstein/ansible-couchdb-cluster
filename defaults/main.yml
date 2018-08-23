@@ -32,10 +32,10 @@ couchdb_pki_cert_suffix: '.pem'
 #  alice: alice-password
 
 # When this option is set to true, no requests are allowed from anonymous users. Everyone must be authenticated.
-couchdb_require_valid_user: false
-couchdb_require_valid_user_node_local: false
+couchdb_require_valid_user: 'false'
+couchdb_require_valid_user_node_local: 'false'
 
-couchdb_reduce_limit: true
+couchdb_reduce_limit: 'true'
 
 couchdb_init: systemd
 couchdb_activate: True
