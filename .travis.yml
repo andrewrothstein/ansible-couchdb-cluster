@@ -17,7 +17,6 @@ branches:
     - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 
 env:
-  - OS=centos_7
   - OS=fedora_23
   - OS=fedora_24
   - OS=fedora_25
