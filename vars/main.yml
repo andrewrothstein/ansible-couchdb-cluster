@@ -1,5 +1,5 @@
 ---
-couchdb_etc_pki_dir:'{{couchdb_dir}}/etc/pki'
+couchdb_etc_pki_dir: '{{couchdb_dir}}/etc/pki'
 
 couchdb_pki_key_file: '{{inventory_hostname}}{{couchdb_pki_key_suffix}}'
 couchdb_pki_key_src: '{{couchdb_pki_dir}}/{{couchdb_pki_key_file}}'
