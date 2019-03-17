@@ -7,12 +7,14 @@
     - f: 'couchdb2'
       d: '/etc/init.d'
   template:
-    src: '{{item.f}}.j2'
-    dest: '{{item.d}}/{{item.f}}'
+    src: '{{ item.f }}.j2'
+    dest: '{{ item.d }}/{{ item.f }}'
     mode: '0755'
 
 - name: Update rc.d
   shell: update-rc.d couchdb2 defaults
 
 - name: Start CouchDB service
-  service: name=couchdb2 state=started
+  service:
+    name: couchdb2
+    state: started

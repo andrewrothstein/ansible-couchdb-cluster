@@ -7,16 +7,17 @@
     - f: couchdb.service
       d: /etc/systemd/system
   template:
-    src: '{{item.f}}.j2'
-    dest: '{{item.d}}/{{item.f}}'
-    mode: '{{item.m|default("0644")}}'
+    src: '{{ item.f }}.j2'
+    dest: '{{ item.d }}/{{ item.f }}'
+    mode: '{{ item.m|default("0644") }}'
 
 - name: systemctl daemon-reload
   become: yes
   become_user: root
   when: couchdb_activate and couchdb_cluster_service_def is changed
-  command: systemctl daemon-reload
-    
+  systemd:
+    daemon_reload: yes
+
 - name: launch couchdb service
   become: yes
   become_user: root

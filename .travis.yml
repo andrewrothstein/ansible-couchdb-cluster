@@ -1,16 +1,12 @@
 ---
+dist: xenial
 sudo: required
 
 services:
   - docker
 
 language: python
-python: "2.7"
-
-addons:
-  apt:
-    packages:
-      - python-pip
+python: 3.5
 
 branches:
   except:
@@ -28,7 +24,7 @@ env:
   - OS=ubuntu_xenial
     
 before_install:
-  - pip install ansible-galaxy-local-deps dcb==0.0.14
+  - pip install ansible-galaxy-local-deps dcb==0.0.16
   - ansible-galaxy-local-deps-write
 
 script:
