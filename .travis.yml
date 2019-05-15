@@ -11,6 +11,8 @@ env:
 - OS=fedora_26
 - OS=fedora_27
 - OS=fedora_28
+- OS=fedora_29
+- OS=fedora_30
 - OS=ubuntu_xenial
 language: python
 python: '3.7'
