@@ -6,7 +6,7 @@
 ; changing this.
 {% if couchdb_admins is defined %}
 [admins]
-{% for (userid, pwd) in couchdb_admins.iteritems() %}
+{% for (userid, pwd) in couchdb_admins.items() %}
 {{userid}} = {{pwd|couchdb_password_hash(userid|hash('sha1'))}}
 {% endfor %}
 {% else %}
