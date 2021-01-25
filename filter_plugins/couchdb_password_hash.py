@@ -14,17 +14,17 @@ except ImportError:
 
 
 def couchdb_password_hash(password, salt, iterations=10):
-    salt = salt.encode('utf-8') if isinstance(salt, six.text_type) else salt
+    bsalt = salt.encode('utf-8') if isinstance(salt, six.text_type) else salt
     if not HAS_PASSLIB:
         return '-hashed-{hash},{salt}'.format(
-            hash=hashlib.sha1(password + salt),
+            hash=hashlib.sha1(password + bsalt).hexdigest,
             salt=salt
         )
     else:
-        dk = pbkdf2_sha1.using(rounds=iterations, salt=salt).hash(password)
+        dk = pbkdf2_sha1.using(rounds=iterations, salt=bsalt).hash(password)
         decoded = binary.ab64_decode(dk.split('$')[-1])
         return '-pbkdf2-{hash},{salt},{iterations}'.format(
-            hash=binascii.hexlify(decoded),
+            hash=binascii.hexlify(decoded).decode("ascii"),
             salt=salt,
             iterations=iterations
         )
