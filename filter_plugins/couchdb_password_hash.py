@@ -17,7 +17,7 @@ def couchdb_password_hash(password, salt, iterations=10):
     bsalt = salt.encode('utf-8') if isinstance(salt, six.text_type) else salt
     if not HAS_PASSLIB:
         return '-hashed-{hash},{salt}'.format(
-            hash=hashlib.sha1(password + bsalt).hexdigest,
+            hash=hashlib.sha1(password + bsalt).hexdigest(),
             salt=salt
         )
     else:
